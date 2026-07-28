@@ -10,3 +10,5 @@ kubtectl run nginx --image nginx
 kubectl get pods
 
 kubectl apply -f <https://k8s.io/examples/pods/simple-pod.yaml>
+
+kubectl get pods -o wide
