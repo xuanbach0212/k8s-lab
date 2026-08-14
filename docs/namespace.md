@@ -1,14 +1,16 @@
-# namespace
+# Namespace
 
-- provide isolate group of resources within cluster
+- Provides an isolated group of resources within a cluster.
 - Each namespace can have its own policies and resource quotas.
-- Divide cluster resources among different users, teams, or projects.
-- other service and communication with other namespace via <service_name>.<namespace>.svc.cluster.local
+- Divides cluster resources among different users, teams, or projects.
+- Services communicate across namespaces via `<service_name>.<namespace>.svc.cluster.local`.
 
-## CMD
+## Commands
 
+```bash
 kubectl config set-context $(kubectl config current-context) --namespace=dev
+```
 
-### Resource quotas
+## Resource quotas
 
 <https://kubernetes.io/docs/concepts/policy/resource-quotas/>

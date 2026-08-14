@@ -1,21 +1,21 @@
 # Deployment
 
-- manages set of pods to run an application workload
-- it provides declarative updates for pods and ReplicaSets
+- Manages a set of Pods to run an application workload.
+- Provides declarative updates for Pods and ReplicaSets.
 
-### usecase
+## Use cases
 
-- create deployment to rollout replicaset
-- declare new state of the pods
-- rollback earlier deployment revision
-- scale up the deployment
-- pause the roll out
-- clean up older replicaset
-- use status of deployment
+- Create a Deployment to roll out a ReplicaSet.
+- Declare a new state for the Pods.
+- Rollback to an earlier Deployment revision.
+- Scale up the Deployment.
+- Pause the rollout.
+- Clean up older ReplicaSets.
+- Check the status of a Deployment.
 
-### sample for deployment yaml
+## Sample Deployment YAML
 
-```
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -33,14 +33,15 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
-        image: nginx:1.14.2
-        ports:
-        - containerPort: 80
+        - name: nginx
+          image: nginx:1.14.2
+          ports:
+            - containerPort: 80
 ```
 
-### cmd
+## Commands
 
+```bash
 kubectl create deployment --image=nginx nginx
 
 kubectl create deployment --image=nginx nginx --dry-run=client -o yaml
@@ -50,3 +51,4 @@ kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > nginx-d
 kubectl create -f nginx-deployment.yaml
 
 kubectl create deployment --image=nginx nginx --replicas=4 --dry-run=client -o yaml > nginx-deployment.yaml
+```

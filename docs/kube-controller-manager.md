@@ -1,12 +1,16 @@
 # kube-controller-manager
 
-- monitor the state of the cluster then modify to meet the desired status
-- contain multiple sub controller such as node, replication, deployment, namespace
+- Monitors the state of the cluster, then makes changes to move it toward the desired state.
+- Contains multiple sub-controllers, e.g. node, replication, deployment, namespace.
 
-## Get Option
+## Get static pod manifest
 
+```bash
 sudo cat /etc/kubernetes/manifests/kube-controller-manager.yaml
+```
 
 ## Get running process
 
+```bash
 ps -aux | grep kube-controller-manager
+```

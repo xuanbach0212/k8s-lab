@@ -1,15 +1,18 @@
-# service
+# Service
 
-- service enable communication between various components within and outside of the application
+- Enables communication between various components, within and outside of the application.
 
 ## Types
 
-- NodePort: Exposes the Service on each Node's IP at a static port (default: 30000-32767)
-- ClusterIP: Only accessible within the cluster - Used for internal pod-to-pod communication
-- LoadBalancer: Provisions a LoadBalancer for application in supported cloud providers
-- ExternalName: Maps a service to external DNS name (no proxying, just CNAME) - Useful for integrating external services into the cluster
+- **ClusterIP** — only accessible within the cluster; used for internal pod-to-pod communication.
+- **NodePort** — exposes the Service on each node's IP at a static port (default: 30000–32767).
+- **LoadBalancer** — provisions a load balancer for the application on supported cloud providers.
+- **ExternalName** — maps a Service to an external DNS name (no proxying, just CNAME); useful for integrating external services into the cluster.
 
-## CMD
+## Commands
 
-- kubectl get services or kubectl get svc
-- kubectl get endpointslices
+```bash
+kubectl get services   # or: kubectl get svc
+
+kubectl get endpointslices
+```

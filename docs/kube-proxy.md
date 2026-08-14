@@ -1,12 +1,16 @@
 # kube-proxy
 
-- kube-proxy is a network proxy that runs on each node in cluster
-- kube-proxy maintain network rules on nodes. These network rules allow network communication to your pods from network sessions inside or outside of your cluster
+- A network proxy that runs on each node in the cluster.
+- Maintains network rules on nodes, allowing network communication to Pods from sessions inside or outside the cluster.
 
-## Get Option
+## Get static pod manifest
 
+```bash
 sudo cat /etc/kubernetes/manifests/kube-proxy.yaml
+```
 
 ## Get running process
 
+```bash
 ps -aux | grep kube-proxy
+```

@@ -1,11 +1,15 @@
 # kube-scheduler
 
-- determines which nodes are valid for placements for binding the pod then the Kubelet create it
+- Determines which nodes are valid for placement, binds the Pod to a node, then the kubelet creates it.
 
-## Get Option
+## Get static pod manifest
 
+```bash
 sudo cat /etc/kubernetes/manifests/kube-scheduler.yaml
+```
 
 ## Get running process
 
+```bash
 ps -aux | grep kube-scheduler
+```

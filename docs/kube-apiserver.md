@@ -1,14 +1,16 @@
 # kube-apiserver
 
-- kube-apiserver acts like a central management component handling request -> validate -> authenticate -> interface with etcd -> coordinating with other system components
+- Acts as the central management component, handling: request -> validate -> authenticate -> interface with etcd -> coordinate with other system components.
+- Lifecycle of an API server request: authenticate user -> validate request -> retrieve/update data in etcd -> scheduler -> kubelet.
 
-- lifecycle of api server request:
-  authenticate user -> validate request -> retrieve data -> update etcd -> scheduler -> kubelet
+## Get static pod manifest
 
-## Get Option
-
+```bash
 sudo cat /etc/kubernetes/manifests/kube-apiserver.yaml
+```
 
 ## Get running process
 
+```bash
 ps -aux | grep kube-apiserver
+```

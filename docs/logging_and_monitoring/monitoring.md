@@ -1,8 +1,22 @@
-To view the logs
+# Monitoring
 
-kubectl logs -f event-simulator-pod
+## How to monitor a node or pod
 
-If there are multiple containers in a pod then you must specify the name of the container explicitly in the command.
+- Metrics Server (built-in, powers `kubectl top`)
+- Prometheus
+- Elastic Stack
+- Datadog
+- Dynatrace
 
-kubectl logs -f <pod-name> <container-name>
-kubectl logs -f even-simulator-pod event-simulator
+## Install metrics-server
+
+```bash
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+```
+
+## Commands
+
+```bash
+kubectl top node
+kubectl top pod
+```
